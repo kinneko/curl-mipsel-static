@@ -67,8 +67,8 @@ patch < openssl.patch
 --with-zlib-lib=$DEST/lib \
 --with-zlib-include=$DEST/include
 
-make CC=mipsel-linux-gcc AR="mipsel-linux-ar r" RANLIB=mipsel-linux-ranlib
-make install CC=mipsel-linux-gcc AR="mipsel-linux-ar r" RANLIB=mipsel-linux-ranlib INSTALLTOP=$DEST OPENSSLDIR=$DEST/ssl
+make CC=mipsel-linux-gnu-gcc AR="mipsel-linux-gnu-ar r" RANLIB=mipsel-linux-gnu-ranlib
+make install CC=mipsel-linux-gnu-gcc AR="mipsel-linux-gnu-ar r" RANLIB=mipsel-linux-gnu-ranlib INSTALLTOP=$DEST OPENSSLDIR=$DEST/ssl
 
 ######## ####################################################################
 # CURL # ####################################################################
