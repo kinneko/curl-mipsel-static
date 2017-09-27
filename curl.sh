@@ -22,9 +22,9 @@ mkdir -p $SRC
 ######## ####################################################################
 
 mkdir $SRC/zlib && cd $SRC/zlib
-$WGET http://zlib.net/zlib-1.2.8.tar.gz
-tar zxvf zlib-1.2.8.tar.gz
-cd zlib-1.2.8
+$WGET http://zlib.net/zlib-1.2.11.tar.gz
+tar zxvf zlib-1.2.11.tar.gz
+cd zlib-1.2.11
 
 LDFLAGS=$LDFLAGS \
 CPPFLAGS=$CPPFLAGS \
