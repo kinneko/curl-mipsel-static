@@ -3,7 +3,7 @@
 set -e
 set -x
 
-mkdir ~/curl && cd ~/curl
+mkdir ./curl && cd ./curl
 
 BASE=`pwd`
 SRC=$BASE/src
