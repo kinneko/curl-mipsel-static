@@ -3,6 +3,10 @@
 set -e
 set -x
 
+ZLIB_VER='zlib-1.2.11'
+OPENSSL_VER='openssl-1.0.2l'
+CURL_VER='curl-7.40.0'
+
 mkdir -p ./buildcurl && cd ./buildcurl
 
 BASE=`pwd`
@@ -22,9 +26,9 @@ mkdir -p $SRC
 ######## ####################################################################
 
 mkdir -p $SRC/zlib && cd $SRC/zlib
-$WGET http://zlib.net/zlib-1.2.11.tar.gz
-tar zxvf zlib-1.2.11.tar.gz
-cd zlib-1.2.11
+$WGET http://zlib.net/$ZLIB_VER.tar.gz
+tar zxvf $ZLIB_VER.tar.gz
+cd $ZLIB_VER
 
 LDFLAGS=$LDFLAGS \
 CPPFLAGS=$CPPFLAGS \
@@ -42,9 +46,9 @@ make install DESTDIR=$BASE
 ########### #################################################################
 
 mkdir -p $SRC/openssl && cd $SRC/openssl
-$WGET http://www.openssl.org/source/openssl-1.0.2l.tar.gz
-tar zxvf openssl-1.0.2l.tar.gz
-cd openssl-1.0.2l
+$WGET http://www.openssl.org/source/$OPENSSL_VER.tar.gz
+tar zxvf $OPENSSL_VER.tar.gz
+cd $OPENSSL_VER
 
 ./Configure linux-mips32 \
 -ffunction-sections -fdata-sections -Wl,--gc-sections \
@@ -60,9 +64,9 @@ make install CC=mipsel-linux-gnu-gcc INSTALLTOP=$DEST OPENSSLDIR=$DEST/ssl
 ######## ####################################################################
 
 mkdir -p $SRC/curl && cd $SRC/curl
-$WGET http://curl.haxx.se/download/curl-7.40.0.tar.gz
-tar zxvf curl-7.40.0.tar.gz
-cd curl-7.40.0
+$WGET http://curl.haxx.se/download/$CURL_VER.tar.gz
+tar zxvf $CURL_VER.tar.gz
+cd $CURL_VER
 
 LDFLAGS=$LDFLAGS \
 CPPFLAGS=$CPPFLAGS \
