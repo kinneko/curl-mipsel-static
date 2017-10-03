@@ -3,7 +3,7 @@
 set -e
 set -x
 
-mkdir ./curl && cd ./curl
+mkdir -p ./buildcurl && cd ./buildcurl
 
 BASE=`pwd`
 SRC=$BASE/src
@@ -21,7 +21,7 @@ mkdir -p $SRC
 # ZLIB # ####################################################################
 ######## ####################################################################
 
-mkdir $SRC/zlib && cd $SRC/zlib
+mkdir -p $SRC/zlib && cd $SRC/zlib
 $WGET http://zlib.net/zlib-1.2.11.tar.gz
 tar zxvf zlib-1.2.11.tar.gz
 cd zlib-1.2.11
