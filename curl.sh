@@ -5,7 +5,7 @@ set -x
 
 ZLIB_VER='zlib-1.2.11'
 OPENSSL_VER='openssl-1.0.2l'
-CURL_VER='curl-7.40.0'
+CURL_VER='curl-7.55.1'
 
 mkdir -p ./buildcurl && cd ./buildcurl
 
@@ -76,5 +76,5 @@ $CONFIGURE \
 --with-zlib=$DEST \
 --with-ssl=$DEST
 
-$MAKE LIBS="-all-static -ldl"
+$MAKE LIBS="-all-static -ldl -pthread"
 make install DESTDIR=$BASE/curl
